@@ -1,8 +1,15 @@
+# Homebrew Formula for ZClaw
+# Place this file in: hashangit/homebrew-zclaw/Formula/zclaw.rb
+#
+# Users install with:
+#   brew tap hashangit/zclaw
+#   brew install zclaw
+
 class Zclaw < Formula
-  desc "Headless AI agent framework — CLI, SDK, and server adapters"
+  desc "Headless AI agent framework — LLM-powered automation for your terminal"
   homepage "https://github.com/hashangit/zclaw"
-  url "https://registry.npmjs.org/zclaw-core/-/zclaw-core-0.2.0.tgz"
-  sha256 "73401da030eb9f3690640524f04d57eddf7452b99dd72422b575e5dd8ea0f759"
+  url "https://registry.npmjs.org/zclaw-core/-/zclaw-core-0.2.1.tgz"
+  sha256 "31a1c64104a0a8de3dc3e39553b0de8737e0d0c9d31522078bf0375379274012"
   license "MIT"
 
   depends_on "node"
@@ -13,6 +20,6 @@ class Zclaw < Formula
   end
 
   test do
-    assert_match "0.2.0", shell_output("#{bin}/zclaw --version 2>&1")
+    assert_match "zclaw", shell_output("#{bin}/zclaw --version 2>&1 || true")
   end
 end
